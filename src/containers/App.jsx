@@ -16,13 +16,20 @@ const App = () => (
     <div className="App">
         <Header />
         <Search />
-        <Categories>
+        <Categories title="Lista 1">
+            <Carousel>
+                <CarouselItem />
+                <CarouselItem />
+                <CarouselItem />
+            </Carousel>
+        </Categories>
+        <Categories title="Lista 2">
             <Carousel>
                 <CarouselItem />
                 <CarouselItem />
             </Carousel>
         </Categories>
-        <Footer></Footer>
+        <Footer />
     </div>
 );
 
