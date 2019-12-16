@@ -6,8 +6,8 @@ import App from './routes/App'
 
 
 ReactDOM.render(
-    <Provider>
+    /*<Provider>
         <App />
-    </Provider>, 
+    </Provider>*/<App />, 
     document.getElementById('app')
 );

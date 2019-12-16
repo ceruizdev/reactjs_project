@@ -10,26 +10,22 @@ import '../assets/styles/components/Categories.scss';
 import '../assets/styles/components/Carousel.scss';
 import '../assets/styles/components/CarouselItem.scss';
 
-const API = 'https://us-central1-reservas-5f547.cloudfunctions.net/api';
+const API = 'https://us-central1-personal-cv-5fd83.cloudfunctions.net/api';
 const Home = () => {
-    const initialState = useInitialState(API);
-    return (
+    const response =  useInitialState(API);
+
+    return response.length === 0 ? <h1>Cargando...</h1> :(
         <>
             <Search />
-            <Categories title="Lista 1">
-                <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
-                    <CarouselItem />
-                    <CarouselItem />
-                </Carousel>
-            </Categories>
-            <Categories title="Lista 2">
-                <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
-                </Carousel>
-            </Categories>
+            {response.certificates.length > 0 &&
+                <Categories title="Skills">
+                    <Carousel>     
+                        {response.certificates.map((item,i) =>            
+                            <CarouselItem key={i} {...item} />
+                        )}
+                    </Carousel>
+                </Categories>
+            }          
         </>
     );
 }

@@ -18,7 +18,7 @@ const Header = () => (
                 <li><a href="/">Cuenta</a></li>
                 <li>
                     <Link to="login">
-                        Cerrar Sesión
+                        Iniciar Sesión
                     </Link>
                 </li>
             </ul>
